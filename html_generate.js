@@ -10,7 +10,11 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-var sql = "SELECT * FROM classes WHERE LENGTH(course_code) > 3 && course_code > 4999 && course_code < 8000 LIMIT 10000";
+// Specific Graduate courses
+// var sql = "SELECT * FROM classes WHERE LENGTH(course_code) > 3 && course_code > 4999 && course_code < 8000 LIMIT 10000";
+
+// All Courses
+var sql = "SELECT * FROM classes WHERE LENGTH(course_code) > 3 LIMIT 100000";
 
 connection.query(sql, function(err, rows) {
     if(err) {
